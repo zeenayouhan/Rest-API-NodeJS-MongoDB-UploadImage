@@ -1,0 +1,22 @@
+{
+  "name": "rest-api-nodejs-mongodb-uploadimage",
+  "version": "1.0.0",
+  "description": "Nodejs-restapi-shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeenayouhan/Rest-API-NodeJS-MongoDB-UploadImage.git"
+  },
+  "author": "Zeena Youhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeenayouhan/Rest-API-NodeJS-MongoDB-UploadImage/issues"
+  },
+  "homepage": "https://github.com/zeenayouhan/Rest-API-NodeJS-MongoDB-UploadImage#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
