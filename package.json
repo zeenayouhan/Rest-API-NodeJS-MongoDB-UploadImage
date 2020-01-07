@@ -2,9 +2,10 @@
   "name": "rest-api-nodejs-mongodb-uploadimage",
   "version": "1.0.0",
   "description": "Nodejs-restapi-shop",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/zeenayouhan/Rest-API-NodeJS-MongoDB-UploadImage#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

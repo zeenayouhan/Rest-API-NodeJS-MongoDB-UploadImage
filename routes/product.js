@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/',(req,res,next)=>{
+router.get('/product',(req,res,next)=>{
     res.status(200).json({
         message:"handling get request to /products"
     });
