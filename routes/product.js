@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+const mongoose=require('mongoose');
+const Product=require('../models/products');
 
 router.get('/product',(req,res,next)=>{
     res.status(200).json({
@@ -8,11 +9,15 @@ router.get('/product',(req,res,next)=>{
     });
 });
 
-router.post('/',(req,res,next)=>{
-    const product ={
+router.post('/:productId',(req,res,next)=>{
+    const product = new Product({
+        _id:new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price
-    };
+    });
+    product.save().then(result=>{
+        console.log(result);
+    }).catch(err=>console.log(err));
     res.status(201).json({
         message:"Handling post request to /products",
         product: product
@@ -21,17 +26,18 @@ router.post('/',(req,res,next)=>{
 
 router.get('/:productId',(req,res,next)=>{
     const id=req.params.productId;
-    if(id=="special"){        
-    res.status(200).json({
-        message: "You have discovered special id"
-        
-    });
-}
-else{
-    res.status(200).json({
-        message: 'You passed an id'
+    Product.findById(id)
+    .exec()
+    .then(doc=>{
+        console.log(doc);
+        res.status(200).json(doc);
     })
-}
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
 });
 
 router.patch('/:productId',(req,res,next)=>{
