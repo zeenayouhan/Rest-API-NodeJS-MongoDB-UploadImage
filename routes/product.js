@@ -3,13 +3,13 @@ const router = express.Router();
 const mongoose=require('mongoose');
 const Product=require('../models/products');
 
-router.get('/product',(req,res,next)=>{
+router.get('/produc',(req,res,next)=>{
     res.status(200).json({
         message:"handling get request to /products"
     });
 });
 
-router.post('/:productId',(req,res,next)=>{
+router.post('/',(req,res,next)=>{
     const product = new Product({
         _id:new mongoose.Types.ObjectId(),
         name: req.body.name,
